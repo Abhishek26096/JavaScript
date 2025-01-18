@@ -7,8 +7,7 @@ function sayMyName(){
     console.log("H");
     console.log("E");
     console.log("K");
-    
-    
+
 }
 
 // sayMyName()
@@ -38,11 +37,11 @@ function loginUserMessage(username = "sam"){
     return `${username} just logged in`
 }
 
-// console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage("abhishek"))
+// console.log(loginUserMessage("abhishek"))
 
 
-function calculateCartPrice(val1, val2, ...num1){
+function calculateCartPrice(val1, val2, ...num1){  //rest operator(....)
     return num1
 }
 
