@@ -14,7 +14,7 @@ const regularUser = {
             firstname: "abhishek",
             lastname: "jha"
         }
-    }
+    }   
 }
 
 // console.log(regularUser.fullname.userfullname.firstname);
@@ -54,6 +54,8 @@ users[1].email
 
 // console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
+
+//JSON :- JAVA SCRIPT OBJECT NOTATION
 
 const course = {
     coursename: "js in hindi",
