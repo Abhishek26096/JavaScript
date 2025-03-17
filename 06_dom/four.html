@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DOM </title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="language">      <!--ul ->unordered list-->
+        <li>TypeScript</li>
+        <!-- <li>Mojo</li>
+        <li>typescript</li> -->
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+      const li = document.createElement('li');
+      li.innerHTML = `${langName}`;
+      document.querySelector('.language').appendChild(li);
+
+    }
+    addLanguage('Mojo')
+    addLanguage('typescript')
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+
+
+    }
+    addOptiLanguage('gollang');
+
+    //edit element
+     const Secondlang = document.querySelector("li:nth-child(2)");
+    //  Secondlang.innerHTML = "Mojo";
+    const Newli = document.createEvent('li');
+    Newli.textContent = "all";
+    Secondlang.replaceWith(Newli);
+
+    //edit
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastlang = document.querySelector('li:last-chils')
+    lastlang.remove(); 
+
+</script>
+</html>
