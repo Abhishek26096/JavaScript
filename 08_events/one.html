@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events</title>
+</head>
+<body>
+  <h2>Amazing Images</h2>
+
+  <div style="background-color: #414141; color: aliceblue;">
+    <ul id="image" style="list-style: none; padding: 0;">
+      <li><img width="200px" id="img1" src="https://images.pexels.com/photos/2304204/pexels-photo-2304204.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop1"></li>
+      <li><img width="200px" id="img2" src="https://images.pexels.com/photos/30894155/pexels-photo-30894155/free-photo-of-contemplative-young-man-in-urban-setting.png?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop2"></li>
+      <li><img width="200px" id="img3" src="https://images.pexels.com/photos/31151452/pexels-photo-31151452/free-photo-of-rustic-cabin-with-alpacas-in-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop3"></li>
+      <li><img width="200px" id="img4" src="https://images.pexels.com/photos/31064104/pexels-photo-31064104/free-photo-of-smiling-woman-in-argyle-sweater-by-brick-wall-outdoors.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop4"></li>
+      <li><img width="200px" id="img5" src="https://images.pexels.com/photos/30876790/pexels-photo-30876790/free-photo-of-solitary-figure-embracing-winter-landscape.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="photoshop5"></li>
+      <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Add the onclick event using JavaScript
+
+    // document.getElementById("img4").onclick = function (){
+    //     alert("photoshop4");
+    // }
+
+
+    //must see these all events:-
+    // type, timestamp, defaultPrevented,
+    // target, toEleent, srcElement, customTarget,
+    // clientX, clientY, screenX, screenY (must watch before interview),
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("image").addEventListener("click", function (e) {
+    //  // alert("photoshop4");
+    //     console.log("clicked inside the ul");
+    // }, false);
+
+
+    // document.getElementById("img4").addEventListener("click", function (e) {
+    //  // alert("photoshop4");
+    //     console.log("img4 clicked");
+    //     e.stopPropagation(); // event bubble ho kar upar ke element par nhi jayega 
+    // }, false);   // false is the default value for the useCapture parameter
+
+    // document.getElementById("google").addEventListener("click", function (e){
+    //     e.preventDefault(); //event ka default behaviour rokne ke liye
+    //     console.log("google clicked");
+        
+    // },false);
+
+  document.querySelector('#image').addEventListener('click',function(e){
+    //console.log(e.target.parentNode);  //e(event) se target me kar ke uska parent node liya tho hme li mill gaya(photo par click krne par)
+    console.log(e.target.tagName);  // e(event) se target me kar ke uska tag naame liya tho hme img mill gaya(photo par click krne par)
+    if(e.target.tagName === 'IMG'){
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+        
+    }
+
+  },false)
+
+  </script>
+</body>
+</html>
