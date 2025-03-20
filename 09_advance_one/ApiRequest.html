@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XHR Example</title>
+  <style>
+    body {
+      background-color: #212121;
+      color: white;
+      font-family: Arial, sans-serif;
+    } 
+  </style>
+</head>
+<body>
+  <h1>Check Console for XHR Output</h1>
+
+  <script>
+    const requestUrl = "https://jsonplaceholder.typicode.com/posts/1"; // Sample JSON API
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const data = JSON.parse(this.responseText);
+        console.log("Type of data:", typeof data);
+        console.log("Response:", data);
+      }
+    };
+
+    xhr.send();
+  </script>
+</body>
+</html>
